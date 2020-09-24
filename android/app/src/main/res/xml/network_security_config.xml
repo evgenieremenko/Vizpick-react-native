@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+
+        <domain includeSubdomains="true">api.qa.wal-mart.com</domain>
+        <domain includeSubdomains="true">item-info-api.dev.vispick.sssvi.prod.us.walmart.net</domain>
+        <domain includeSubdomains="true">tag-management-service.dev.vispick.sssvi.prod.us.walmart.net</domain>
+
+        <trust-anchors>
+            <certificates src="@raw/api_qa_walmart"/>
+            <!-- Trust preinstalled CAs -->
+            <certificates src="system" />
+            <!-- Additionally trust user added CAs -->
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>
